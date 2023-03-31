@@ -1,5 +1,5 @@
 {
-  "homepage":"https://edwardhz.github.io/shop/",
+  "homepage": "https://edwardhz.github.io/shop/",
   "name": "shop",
   "version": "1.0.0",
   "description": "",
@@ -21,7 +21,9 @@
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "react-router-dom": "^6.8.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
