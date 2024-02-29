@@ -1,15 +1,11 @@
-import React,{createContext, useState, useEffect} from 'react'
-
+import React, { createContext, useState, useEffect } from "react";
 
 // context
-export const ProductContext = createContext()
+export const ProductContext = createContext();
 
-
-
-
-const ProductProvider = ({children}) => {
+const ProductProvider = ({ children }) => {
   //products state
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState([]);
   // fetch products
   useEffect(()=>{
     const fetchProducts = async ()=>{
@@ -23,8 +19,10 @@ const ProductProvider = ({children}) => {
     fetchProducts()
   },[])
   return (
-    <ProductContext.Provider value={{products}}>{children}</ProductContext.Provider>
-  )
-}
+    <ProductContext.Provider value={{ products }}>
+      {children}
+    </ProductContext.Provider>
+  );
+};
 
-export default ProductProvider
+export default ProductProvider;
