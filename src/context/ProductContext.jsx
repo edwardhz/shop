@@ -13,9 +13,9 @@ const ProductProvider = ({children}) => {
   // fetch products
   useEffect(()=>{
     const fetchProducts = async ()=>{
-      const response = await fetch('https://fakestoreapi.com/products?limit=10');
+      const response = await fetch('https://dummyjson.com/products?limit=100');
       const data = await response.json()
-      setProducts(data)
+      setProducts(data.products)
       console.log(data)
       
 

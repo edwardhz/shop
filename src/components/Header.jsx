@@ -5,6 +5,7 @@ import { CartContext } from '../context/CartContext';
 import { BsBag } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import Logo from '../img/icon_shop.svg'
+import Search from './Search';
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false)
@@ -33,6 +34,7 @@ const Header = () => {
             </div>
         </div>
       </div>
+      <Search/>
     </header>
   )
 }
