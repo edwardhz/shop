@@ -4,7 +4,7 @@ const SearchBar = ({ setFilteredProducts }) => {
   const [product, setProduct] = useState([]);
   const [search, setSearch] = useState("");
 
-  const URL = "https://fakestoreapi.com/products?limit=10";
+  const URL = "http://localhost:3005/plants";
 
   const fetchData = async () => {
     try {

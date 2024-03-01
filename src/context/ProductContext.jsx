@@ -9,9 +9,9 @@ const ProductProvider = ({ children }) => {
   // fetch products
   useEffect(()=>{
     const fetchProducts = async ()=>{
-      const response = await fetch('https://dummyjson.com/products?limit=100');
+      const response = await fetch('http://localhost:3005/plants');
       const data = await response.json()
-      setProducts(data.products)
+      setProducts(data)
       console.log(data)
       
 

@@ -9,6 +9,7 @@ const Home = () => {
   const { products } = useContext(ProductContext);
   const [filteredProducts, setFilteredProducts] = useState(products);
 
+  console.log(filteredProducts);
   return (
     <div>
       <Hero /> {/* Asegúrate de que Hero esté definido y sea accesible */}

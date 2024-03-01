@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react'
-import axios from 'axios';
+import axios, { all } from 'axios';
 
 export const CartContext = createContext()
 
@@ -28,15 +28,19 @@ const CartProvider = ({ children }) => {
       const newItem = { ...product, amount: 1 }
       setCart([...cart, newItem])
     }
+    let allProducts = JSON.parse(localStorage.getItem('allProductsData')) || data;
+
+    localStorage.setItem('allProductsData', JSON.stringify(allProducts));
     const form = {
       'user_name': 'usuario123',
-      'product_user_input': product.category,
-      'product_ID': 'title',
-      'dataset': data
+      'product_user_input': product.product_name,
+      'product_ID': 'product_name',
+      'dataset': allProducts
     }
     axios.post('http://127.0.0.1:5000/recommendations', form)
         .then(data => {
-          console.log(data.data);
+          localStorage.setItem('allProductsData', JSON.stringify(data.data.all_products));
+          localStorage.setItem('recommendationsProductsData', JSON.stringify(data.data.all_products));
         })
         .catch(error => {
           console.log(error);

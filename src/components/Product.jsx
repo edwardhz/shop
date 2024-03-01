@@ -6,24 +6,25 @@ import axios from 'axios';
 
 const Product = ({product, products}) => {
   const {addToCart} = useContext(CartContext);
-  const {id, image, description, price, title,category} = product;
+  const {id, image, date, price, product_name,category} = product;
 
   const handleOpenDetailsProduct = (product) => {
-    let allProducts = JSON.parse(localStorage.getItem('productsData')) || products;
+    let allProducts = JSON.parse(localStorage.getItem('allProductsData')) || products;
 
-    localStorage.setItem('productsData', JSON.stringify(allProducts));
+    localStorage.setItem('allProductsData', JSON.stringify(allProducts));
     
     const form = {
       'user_name': 'usuario123',
-      'product_user_input': product.category,
-      'product_ID': 'title',
+      'product_user_input': product.product_name,
+      'product_ID': 'product_name',
       'dataset': allProducts
     }
 
     axios.post('http://127.0.0.1:5000/recommendations', form)
         .then(response => {
-          console.log(response.data.all_products);
-          localStorage.setItem('productsData', JSON.stringify(response.data.all_products));
+          console.log(response.data.recommended_products);
+          localStorage.setItem('allProductsData', JSON.stringify(response.data.all_products));
+          localStorage.setItem('recommendationsProductsData', JSON.stringify(response.data.all_products));
         })
         .catch(error => {
           console.error(error);
@@ -38,7 +39,7 @@ const Product = ({product, products}) => {
             <img
               className="max-h-[160px] group-hover:scale-110 transition duration-100"
               src={image}
-              alt={description}
+              alt={product_name}
             />
           </div>
         </div>
@@ -64,7 +65,7 @@ const Product = ({product, products}) => {
       <div>
         <div className="text-sm capitalize text-gray-500 mb-1">{category}</div>
         <Link to={`/product/${id}`}>
-          <h2 className="font-semibold mb-1">{title}</h2>
+          <h2 className="font-semibold mb-1">{product_name}</h2>
         </Link>
         <div className='font-semibold'>$ {price}</div>
       </div>

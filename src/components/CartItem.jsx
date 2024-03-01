@@ -6,7 +6,7 @@ import { CartContext } from 'context/CartContext';
 
 
 const CartItem = ({item}) => {
-  const {id, title,image,price,amount} = item;
+  const {id, product_name,image,price,size} = item;
 
   const {addToCart, removeFromCart, removeItem } = useContext(CartContext);
 
@@ -19,10 +19,10 @@ const CartItem = ({item}) => {
           </Link>
         </div>
         <div className='w-full flex flex-col'>
-          {/* Title and remove */}
+          {/* product_name and remove */}
           <div className='flex justify-between mb-2'>
-              {/* Link title */}
-              <Link to={`/product/${id}`} className='text-sm uppercase front-medium max-w-[220px] hover:underline'>{title}</Link>
+              {/* Link product_name */}
+              <Link to={`/product/${id}`} className='text-sm uppercase front-medium max-w-[220px] hover:underline'>{product_name}</Link>
               {/* Remove */}
               <div className='text-xl'>
                 <IoMdClose className='hover:text-red-500 transition cursor-pointer text-2xl'
@@ -32,9 +32,9 @@ const CartItem = ({item}) => {
           </div>
           {/* Description */}
           <div className='w-full flex justify-between items-center'>
-            {/* Price */}
+            {/* transaction_size */}
 
-              <div className='text-md font-bold'>$ {(amount*price).toFixed(3)}</div>      
+              <div className='text-md font-bold'>$ {(size*price).toFixed(3)}</div>      
 
             <div className='p-2 '>
               <div className='border flex justify-around items-center  min-w-[80px] min-h-[30px] rounded-md'>
@@ -44,7 +44,7 @@ const CartItem = ({item}) => {
                     />
                   </div>
                   <div>
-                    {amount}
+                    {size}
                   </div>
                   <div className='cursor-pointer'>
                     <AiFillDelete className='text-xl hover:text-blue-500 transition-all'
