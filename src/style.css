@@ -4,13 +4,30 @@
 
 :root {
   --color-primary: #000814;
-  --color-secondary: #001d3d;
-  --color-background: #003566;
+  --color-secondary: #003566;
+  --color-background: #001d3d;
   --color-: #0075bf;
   --color-yellow-primary: #ffc300;
   --color-yellow-secondary: #ffd60a;
 }
 
+.product-details-container {
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.home-container {
+  background-color: #f3f4f6;
+}
+
 .header-color {
-  background-color: var(--color-background);
+  background-color: var(--color-primary);
+}
+
+.searchbar-container {
+  background-color: #d9d9d9;
+  color: #7e7e7e;
 }

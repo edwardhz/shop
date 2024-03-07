@@ -3,6 +3,9 @@ import { SiderbarContext } from "../context/SidebarContext";
 import { CartContext } from "../context/CartContext";
 import SearchBar from "./SearchBar";
 import { ProductContext } from "../context/ProductContext";
+import downArrow from "../img/downArrow.svg";
+import signIn from "../img/signIn.svg";
+import heart from "../img/heart.svg";
 import "../style.css";
 
 import BsBag from "../img/icon_cart.svg";
@@ -24,30 +27,42 @@ const Header = () => {
   }, [filteredProducts]);
 
   return (
-    <header className="header-color">
+    <header className="header-color h-[80px]">
       <div className="container mx-auto flex items-center justify-between h-full relative">
         <Link to="/">
           <div>
-            <img className="w-[50px]" src={Logo} alt="" />
+            <img className="w-[80px]" src={Logo} alt="" />
           </div>
         </Link>
-        <ul className="flex items-center justify-center flex-1 gap-4 text-white">
+        <ul className="flex items-center justify-center gap-[40px] text-white">
           <li>Home</li>
-          <li>
-            Catalog <span>.</span>
+          <li className="flex items-center">
+            Catalog{" "}
+            <span className="ml-1">
+              <img
+                src={downArrow}
+                alt="flecha hacia abajo"
+                className="self-center"
+              />
+            </span>
           </li>
           <li>Contact</li>
           <li>About us</li>
         </ul>
-        <SearchBar setFilteredProducts={setFilteredProducts} />
-        <div className="flex items-center justify-center flex-1"></div>
+        <div className="w-[315px]">
+          <SearchBar setFilteredProducts={setFilteredProducts} />
+        </div>
         <div
           onClick={() => setIsOpen(!isOpen)}
           className="cursor-pointer inline-block relative"
         >
-          <img src={BsBag} className="text-2xl" />
-          <div className="header-cart absolute top-0 right-0 mt-[-10px] mr-[-10px] bg-white rounded-full w-[20px] h-[20px] flex items-center justify-center text-xs text-black">
-            <p>{totalItems()}</p>
+          <div className="flex gap-4">
+            <img src={heart} alt="corazon" className="text-2xl" />
+            <div className="header-cart absolute top-0 right-0 mt-[-10px] mr-[-10px] bg-white rounded-full w-[20px] h-[20px] flex items-center justify-center text-xs text-black">
+              <p>{totalItems()}</p>
+            </div>
+            <img src={signIn} alt="sesión" className="text-2xl" />
+            <img src={BsBag} className="text-2xl" />
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@ const Hero = () => {
             <span className="font-semibold">NOW</span>
           </h1>
           <div className="decoration-solid ml-2">
-            <button className="bg-secondary text-white rounded-lg p-1.5 font-roboto">
+            <button className="bg-secondary hover:bg-blue-600 text-white font-Roboto py-2 px-4 rounded-lg mr-4">
               Shop now
             </button>
           </div>

@@ -1,36 +1,31 @@
 import React from "react";
+import arrowLeft from "../img/arrowLeft.svg";
+import arrowRight from "../img/arrowRight.svg";
 
 const SalesCarousel = () => {
   return (
     <div className="flex justify-center">
       {/* Flecha a la izquierda */}
       <div className="flex items-center">
-        <div className="mr-4">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 text-gray-400 cursor-pointer"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
+        {/* Flecha a la izquierda */}
+        <div className="flex items-center">
+          <div className="-mr-4 z-50">
+            <img
+              src={arrowLeft}
+              alt="Flecha izquierda"
+              className="h-8 w-8 text-gray-400 cursor-pointer"
             />
-          </svg>
+          </div>
         </div>
       </div>
 
       <div className="overflow-x-auto whitespace-nowrap py-4">
-        <h2 className="text-2xl font-bold mb-4 ml-4">Current Sales</h2>
         <div className="flex justify-center">
           {/* Primer producto */}
-          <div className="border border-gray-200 rounded-lg shadow-md mb-4 relative overflow-hidden group transition mr-4">
+          <div className="border border-gray-200 rounded-lg shadow-md mb-4 relative overflow-hidden group transition mr-4 bg-white">
             <div className="w-[200px] mx-auto flex justify-center items-center relative">
               <img
-                className="max-h-[160px] group-hover:scale-110 transition duration-100 object-cover"
+                className="max-h-[160px] group-hover:scale-110 transition duration-100 object-cover w-full"
                 src="/img/CarltonLondonIncenseEaudaparfum,PremiumLongLasting&RefreshingPerfumeforMen-100.jpg"
                 alt="Carlton London Incense Eau da parfume"
               />
@@ -46,7 +41,7 @@ const SalesCarousel = () => {
           </div>
 
           {/* Segundo producto */}
-          <div className="border border-gray-200 rounded-lg shadow-md mb-4 relative overflow-hidden group transition mr-4">
+          <div className="border border-gray-200 rounded-lg shadow-md mb-4 relative overflow-hidden group transition mr-4 bg-white">
             <div className="w-[200px] mx-auto flex justify-center items-center relative">
               <img
                 className="max-h-[160px] group-hover:scale-110 transition duration-100 object-cover"
@@ -65,7 +60,7 @@ const SalesCarousel = () => {
           </div>
 
           {/* Tercer producto */}
-          <div className="border border-gray-200 rounded-lg shadow-md mb-4 relative overflow-hidden group transition">
+          <div className="border border-gray-200 rounded-lg shadow-md mb-4 relative overflow-hidden group transition bg-white">
             <div className="w-[200px] mx-auto flex justify-center items-center relative">
               <img
                 className="max-h-[160px] group-hover:scale-110 transition duration-100 object-cover"
@@ -87,21 +82,15 @@ const SalesCarousel = () => {
 
       {/* Flecha a la derecha */}
       <div className="flex items-center">
-        <div className="ml-4">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 text-gray-400 cursor-pointer"
+        <div className="-ml-4 z-50">
+          <img
+            src={arrowRight}
+            href="arrow right carousel"
+            className="h-8 w-8 text-gray-400 cursor-pointer"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
+          ></img>
         </div>
       </div>
     </div>

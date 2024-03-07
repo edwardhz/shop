@@ -37,15 +37,14 @@ const SearchBar = ({ setFilteredProducts }) => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="justify-center items-center w-full">
       <div className="relative mr-4">
         <input
           value={search}
           onChange={handleSearch}
           type="text"
-          placeholder="Buscar..."
-          className="px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500 text-center"
-          style={{ width: "200px" }}
+          placeholder="Buscar productos"
+          className="px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:border-blue-500 text-left w-full searchbar-container"
         />
       </div>
     </div>

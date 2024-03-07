@@ -1,13 +1,14 @@
-import React from 'react'
+import React from "react";
+import iconShop from "../img/icon_shop.svg";
 
 const Footer = () => {
   return (
-    <footer className='bg-primary py-4'>
-      <div className='container mx-auto'>
-        <p className='text-white text-center'>Edward Martin Hernandez Zambrano</p>
+    <footer className="header-color py-4">
+      <div className="flex justify-center  h-[147px]">
+        <img src={iconShop} alt="logo" className="w-[190px]" />
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

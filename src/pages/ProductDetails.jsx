@@ -71,36 +71,37 @@ const ProductDetails = () => {
       </h1>
       <section className="pt-32 pb-12 lg:py-32 min-h-screen flex items-center">
         <div className="container mx-auto">
-          <div className="flex flex-col lg:flex-row items-center">
+          <div className="flex flex-col lg:flex-row items-start">
             <div className="flex-1 text-center lg:text-left lg:mr-8 mb-8 lg:mb-0">
               <img
-                className="max-w-[400px] lg:max-w-full mx-auto mb-4"
+                className="max-w-[300px] lg:max-w-full mx-auto mb-4"
                 src={`/img/${removerEspacios(product_name)}.jpg`}
                 alt=""
               />
             </div>
             <div className="flex-1 mt-14">
-              <h1 className="text-3xl font-bold mb-2">{product_name}</h1>
-              <div className="flex">
-                <span className="text-2xl mr-1">⭐️</span>
-                <span className="text-2xl mr-1">⭐️</span>
-                <span className="text-2xl mr-1">⭐️</span>
-                <span className="text-2xl mr-1">⭐️</span>
-                <span className="text-2xl">⭐️</span>
+              <div className="border border-gray-300 rounded-lg p-4 mb-4">
+                <h1 className="text-3xl font-bold mb-2">{product_name}</h1>
+                <div className="flex items-center mb-2">
+                  <span className="text-2xl mr-1">⭐️</span>
+                  <span className="text-2xl mr-1">⭐️</span>
+                  <span className="text-2xl mr-1">⭐️</span>
+                  <span className="text-2xl mr-1">⭐️</span>
+                  <span className="text-2xl">⭐️</span>
+                </div>
+                <div className="text-xl font-medium text-blue-500 mb-4">
+                  $ {price}
+                </div>
+                <button
+                  onClick={() => addToCart(product, product.id)}
+                  className="bg-primary py-4 px-8 text-white mb-2 w-full rounded-md"
+                >
+                  Add to cart
+                </button>
+                <button className="border py-4 px-8 text-primary w-full rounded-md">
+                  Shop now
+                </button>
               </div>
-              <div className="text-xl font-medium text-blue-500 mb-4">
-                $ {price}
-              </div>
-              <p className="mb-4">{category}</p>
-              <button
-                onClick={() => addToCart(product, product.id)}
-                className="bg-primary py-4 px-8 text-white mr-4"
-              >
-                Add to cart
-              </button>
-              <button className="border py-4 px-8 text-primary">
-                Shop now
-              </button>
             </div>
           </div>
         </div>
