@@ -4,6 +4,7 @@ import { ProductContext } from "../context/ProductContext";
 import { CartContext } from "../context/CartContext";
 import axios from "axios";
 import Product from "../components/Product";
+import heartShop from "../img/heartShop.svg";
 
 const ProductDetails = () => {
   const { products } = useContext(ProductContext);
@@ -62,11 +63,11 @@ const ProductDetails = () => {
     );
   }
 
-  const { product_name, price, category, image } = product;
+  const { product_name, price } = product;
 
   return (
     <>
-      <h1 className="text-3xl font-bold mb-2">
+      <h1 className="text-2xl font-bold pt-[80px] mb-4 ml-[350px]">
         You also may interest in: consectetuer adipiscing elit
       </h1>
       <section className="pt-32 pb-12 lg:py-32 min-h-screen flex items-center">
@@ -79,9 +80,16 @@ const ProductDetails = () => {
                 alt=""
               />
             </div>
-            <div className="flex-1 mt-14">
-              <div className="border border-gray-300 rounded-lg p-4 mb-4">
-                <h1 className="text-3xl font-bold mb-2">{product_name}</h1>
+            <div className="flex-1 mt-14 text-justify">
+              <div className="shadow-xl rounded-lg p-4 mb-4 w-[391px]">
+                <img
+                  src={heartShop}
+                  alt="me gusta"
+                  className="ml-[330px] mt-[2px]"
+                />
+                <h1 className="text-xl font-Roboto mb-2 w-[351px] mt-10">
+                  {product_name}
+                </h1>
                 <div className="flex items-center mb-2">
                   <span className="text-2xl mr-1">⭐️</span>
                   <span className="text-2xl mr-1">⭐️</span>
@@ -89,17 +97,23 @@ const ProductDetails = () => {
                   <span className="text-2xl mr-1">⭐️</span>
                   <span className="text-2xl">⭐️</span>
                 </div>
-                <div className="text-xl font-medium text-blue-500 mb-4">
+                <div className="text-6xl font-medium text-black-500 mb-4">
                   $ {price}
                 </div>
+                <p className="w-[351px]">
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                  natoque penatibus et magnis dis parturient montes, nascetur
+                  ridiculus mus. Donec qu
+                </p>
                 <button
                   onClick={() => addToCart(product, product.id)}
-                  className="bg-primary py-4 px-8 text-white mb-2 w-full rounded-md"
+                  className="bg-secondary hover:bg-blue-600 text-white font-Roboto w-[351px] rounded-[10px] h-[36px] align-text-center mb-4 mt-4"
                 >
-                  Add to cart
-                </button>
-                <button className="border py-4 px-8 text-primary w-full rounded-md">
                   Shop now
+                </button>
+                <button className="bg-secondary hover:bg-blue-600 text-white font-Roboto w-[351px] rounded-[10px] h-[36px] align-text-center mb-4">
+                  Add to cart
                 </button>
               </div>
             </div>
@@ -107,11 +121,11 @@ const ProductDetails = () => {
         </div>
       </section>
       <section className="min-h-screen">
-        <div className="container mx-auto">
-          <h3 className="text-xl font-semibold mb-4 flex justify-center items-center mb-8">
+        <div className="container justify-center">
+          <h3 className="flex text-2xl font-bold pt-[80px] mb-[100px] ml-[350px]">
             Related products
           </h3>
-          <div className="flex gap-8 justify-center items-center">
+          <div className="flex gap-1 justify-center items-center w-[800px] mt-[10px] ml-[400px]">
             {relatedProducts.map((relatedProduct) => (
               <Product
                 product={relatedProduct}
