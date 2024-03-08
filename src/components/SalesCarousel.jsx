@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import arrowLeft from "../img/arrowLeft.svg";
 import arrowRight from "../img/arrowRight.svg";
 
@@ -22,7 +23,10 @@ const SalesCarousel = () => {
       <div className="overflow-x-auto whitespace-nowrap py-4">
         <div className="flex justify-center">
           {/* Primer producto */}
-          <div className="border border-gray-200 rounded-lg shadow-md mb-4 relative overflow-hidden group transition mr-4 bg-white">
+          <Link
+            to="/product/163"
+            className="border border-gray-200 rounded-lg shadow-md mb-4 relative overflow-hidden group transition mr-4 bg-white"
+          >
             <div className="w-[200px] mx-auto flex justify-center items-center relative">
               <img
                 className="max-h-[160px] group-hover:scale-110 transition duration-100 object-cover w-full"
@@ -38,10 +42,13 @@ const SalesCarousel = () => {
                 Carlton London Incense Eau da parfume
               </p>
             </div>
-          </div>
+          </Link>
 
           {/* Segundo producto */}
-          <div className="border border-gray-200 rounded-lg shadow-md mb-4 relative overflow-hidden group transition mr-4 bg-white">
+          <Link
+            to="/product/167"
+            className="border border-gray-200 rounded-lg shadow-md mb-4 relative overflow-hidden group transition mr-4 bg-white"
+          >
             <div className="w-[200px] mx-auto flex justify-center items-center relative">
               <img
                 className="max-h-[160px] group-hover:scale-110 transition duration-100 object-cover"
@@ -57,10 +64,13 @@ const SalesCarousel = () => {
                 Denver Hamilton Perfume Long Lasting
               </p>
             </div>
-          </div>
+          </Link>
 
           {/* Tercer producto */}
-          <div className="border border-gray-200 rounded-lg shadow-md mb-4 relative overflow-hidden group transition bg-white">
+          <Link
+            to="/product/164"
+            className="border border-gray-200 rounded-lg shadow-md mb-4 relative overflow-hidden group transition bg-white"
+          >
             <div className="w-[200px] mx-auto flex justify-center items-center relative">
               <img
                 className="max-h-[160px] group-hover:scale-110 transition duration-100 object-cover"
@@ -76,7 +86,7 @@ const SalesCarousel = () => {
                 Charlene Spray Mist Perfume 30 Intimate
               </p>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
 
