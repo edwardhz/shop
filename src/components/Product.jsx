@@ -83,13 +83,13 @@ const Product = ({ product, products }) => {
 
   return (
     <div
-      className="border border-gray-200 rounded-lg shadow-xl mb-4 relative overflow-hidden group transition mr-4"
+      className="border border-gray-200 rounded-lg shadow-xl relative overflow-hidden group transition w-[400px] bg-white"
       onClick={() => handleOpenDetailsProduct(product)}
     >
       <a href={`/product/${id}`} className="group">
-        <div className="w-full h-[300px] mx-auto relative bg-white">
+        <div className="w-full h-[300px] mx-auto relative">
           <img
-            className="object-fill w-full h-full relative top-0 left-0"
+            className="object-fill w-full h-full relative top-0 left-0 px-[30px] pt-[15px]"
             src={`/img/${removerEspacios(product_name)}.jpg`}
             alt={product_name}
           />

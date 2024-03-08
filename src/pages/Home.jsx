@@ -18,16 +18,16 @@ const Home = () => {
       {" "}
       {/* Aplica la clase CSS al contenedor principal */}
       <Hero />
-      <h2 className="text-2xl font-bold pt-[80px] mb-4 ml-[350px]">
+      <h2 className="text-2xl font-bold pt-[80px] mb-4 ml-[20%]">
         Current Sales
       </h2>
       <SalesCarousel /> {/* Aquí se renderiza SalesCarousel al principio */}
       <section className="py-16">
-        <h2 className="text-2xl font-bold mb-4 ml-[350px]">
+        <h2 className="text-2xl font-bold mb-4 ml-[20%]">
           Featured Products
         </h2>
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-sm mx-auto md:max-w-none md:mx-0">
+        <div className="w-[80%] m-auto">
+          <div className="flex flex-wrap justify-center gap-[15px]">
             {productsToShow.map((product) => (
               <Product product={product} key={product.id} />
             ))}
@@ -51,8 +51,8 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <h2 className="text-2xl font-bold mb-4 ml-[350px]">New Products</h2>
-      <NewProductsCarousel />{" "}
+      <h2 className="text-2xl font-bold mb-4 ml-[20%]">New Products</h2>
+      <NewProductsCarousel />
       {/* Aquí se renderiza NewProductsCarousel siempre */}
     </div>
   );

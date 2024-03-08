@@ -3,15 +3,15 @@ import shopArrow from "../img/shopArrow.svg";
 
 const NewProductsCarousel = () => {
   return (
-    <div className="flex justify-center">
-      <div className="overflow-x-auto whitespace-nowrap py-4">
-        <div className="flex justify-center">
-          <div className="border border-gray-200 rounded-lg shadow-md p-4 mr-4 bg-white">
+    <div className="flex justify-center w-[80%] m-auto">
+      <div className="py-4">
+        <div className="flex justify-center gap-[20px] mb-[100px] m-auto flex-wrap">
+          <div className="border border-gray-200 rounded-lg shadow-md p-4 bg-white w-[400px]">
             <div className="flex justify-center items-center mb-4">
               <img
                 src="/img/DENVERBlackCodePerfume-60EaudeParfum-ForMenLongLastingLuxuryScentFragrance.jpg"
                 alt="Imagen 1"
-                className="w-full max-h-[160px] group-hover:scale-110 transition duration-100 object-cover"
+                className="w-full max-h-[200px] group-hover:scale-110 transition duration-100 object-cover"
               />
             </div>
             <div className="p-4 bg-opacity-50">
@@ -32,12 +32,12 @@ const NewProductsCarousel = () => {
               </div>
             </div>
           </div>
-          <div className="border border-gray-200 rounded-lg shadow-md p-4 mr-4 bg-white">
+          <div className="border border-gray-200 rounded-lg shadow-md p-4 bg-white w-[400px]">
             <div className="flex justify-center items-center mb-4">
               <img
                 src="/img/EngageOneSoulGender-freePerfume,Unisex,LongLasting,CitrusandSpicy,FreeTesterwithpack,100.jpg"
                 alt="Imagen 2"
-                className="w-full max-h-[160px] group-hover:scale-110 transition duration-100 object-cover"
+                className="w-full max-h-[200px] group-hover:scale-110 transition duration-100 object-cover"
               />
             </div>
             <div className="p-4 bg-opacity-50">
@@ -58,12 +58,12 @@ const NewProductsCarousel = () => {
               </div>
             </div>
           </div>
-          <div className="border border-gray-200 rounded-lg shadow-md p-4 bg-white">
+          <div className="border border-gray-200 rounded-lg shadow-md p-4 bg-white w-[400px]">
             <div className="flex justify-center items-center mb-4">
               <img
                 src="/img/CharleneSprayMistPerfume30-Intimate(PACKOF2).jpg"
                 alt="Imagen 3"
-                className="w-full max-h-[160px] group-hover:scale-110 transition duration-100 object-cover"
+                className="w-full max-h-[200px] group-hover:scale-110 transition duration-100 object-cover"
               />
             </div>
             <div className="p-4 bg-opacity-50">
