@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import shopArrow from "../img/shopArrow.svg";
 
 const NewProductsCarousel = () => {
@@ -7,13 +8,16 @@ const NewProductsCarousel = () => {
       <div className="py-4">
         <div className="flex justify-center gap-[20px] mb-[100px] m-auto flex-wrap">
           <div className="border border-gray-200 rounded-lg shadow-md p-4 bg-white w-[400px]">
-            <div className="flex justify-center items-center mb-4">
+            <Link
+              to="/product/166"
+              className="flex justify-center items-center mb-4"
+            >
               <img
                 src="/img/DENVERBlackCodePerfume-60EaudeParfum-ForMenLongLastingLuxuryScentFragrance.jpg"
                 alt="Imagen 1"
                 className="w-full max-h-[200px] group-hover:scale-110 transition duration-100 object-cover"
               />
-            </div>
+            </Link>
             <div className="p-4 bg-opacity-50">
               <div className="text-3xl font-bold text-gray-700">
                 <p className="font-Roboto text-lg mb-2">
@@ -33,13 +37,16 @@ const NewProductsCarousel = () => {
             </div>
           </div>
           <div className="border border-gray-200 rounded-lg shadow-md p-4 bg-white w-[400px]">
-            <div className="flex justify-center items-center mb-4">
+            <Link
+              to="/product/170"
+              className="flex justify-center items-center mb-4"
+            >
               <img
                 src="/img/EngageOneSoulGender-freePerfume,Unisex,LongLasting,CitrusandSpicy,FreeTesterwithpack,100.jpg"
                 alt="Imagen 2"
                 className="w-full max-h-[200px] group-hover:scale-110 transition duration-100 object-cover"
               />
-            </div>
+            </Link>
             <div className="p-4 bg-opacity-50">
               <div className="text-3xl font-bold text-gray-700">
                 <p className="font-Roboto text-lg mb-2">
@@ -59,13 +66,16 @@ const NewProductsCarousel = () => {
             </div>
           </div>
           <div className="border border-gray-200 rounded-lg shadow-md p-4 bg-white w-[400px]">
-            <div className="flex justify-center items-center mb-4">
+            <Link
+              to="/product/165"
+              className="flex justify-center items-center mb-4"
+            >
               <img
                 src="/img/CharleneSprayMistPerfume30-Intimate(PACKOF2).jpg"
                 alt="Imagen 3"
                 className="w-full max-h-[200px] group-hover:scale-110 transition duration-100 object-cover"
               />
-            </div>
+            </Link>
             <div className="p-4 bg-opacity-50">
               <div className="text-3xl font-bold text-gray-700">
                 <p className="font-Roboto text-lg mb-2">

@@ -11,6 +11,9 @@ const ProductDetails = () => {
   const { id } = useParams();
   const { addToCart } = useContext(CartContext);
   const [relatedProducts, setRelatedProducts] = useState([]);
+  const currentProduct = products.find(
+    (product) => product.id === parseInt(id)
+  );
 
   // Función para remover espacios de un string
   const removerEspacios = (str) => {
@@ -38,34 +41,34 @@ const ProductDetails = () => {
         price_column: "price",
         category_discounts: {
           "Carlton London": [5, 20],
-          "Denver": [5, 20],
-          "Engage": [5, 20],
-          "Envy": [5, 20],
-          "FOGG": [5, 20],
+          Denver: [5, 20],
+          Engage: [5, 20],
+          Envy: [5, 20],
+          FOGG: [5, 20],
           "KS WOMAN": [5, 20],
           "LA' French": [5, 20],
-          "Ahava": [5, 20],
+          Ahava: [5, 20],
           "Alpha Skin Care": [5, 20],
           "American Crew": [5, 20],
           "Ariana Grande": [5, 20],
           "Babo Botanicals": [5, 20],
           "Baxter of California": [5, 20],
-          "Beast": [5, 20],
+          Beast: [5, 20],
           "Beekman 1802": [5, 20],
-          "Bliss": [5, 20],
-          "boscia": [5, 20],
-          "Briogeo": [5, 20],
-          "Bushbalm": [5, 20],
+          Bliss: [5, 20],
+          boscia: [5, 20],
+          Briogeo: [5, 20],
+          Bushbalm: [5, 20],
           "Buttah Skin": [5, 20],
-          "Cetaphil": [5, 20],
-          "Clarins": [5, 20],
-          "Clinique": [5, 20],
+          Cetaphil: [5, 20],
+          Clarins: [5, 20],
+          Clinique: [5, 20],
           "Coco & Eve": [5, 20],
           "Da Bomb": [5, 20],
           "Daily Concepts": [5, 20],
-          "Dermalogica": [5, 20],
-          "Differin": [5, 20],
-          "Dionis": [5, 20],
+          Dermalogica: [5, 20],
+          Differin: [5, 20],
+          Dionis: [5, 20],
           "Dr Teal's": [5, 20],
         },
       };
@@ -98,20 +101,19 @@ const ProductDetails = () => {
 
   const { product_name, price } = product;
 
-
   function capitalizeWords(text) {
     // Dividimos el texto en palabras utilizando el espacio como separador
-    const words = text.split(' ');
-  
+    const words = text.split(" ");
+
     // Transformamos cada palabra para que su primera letra sea mayúscula
-    const capitalizedWords = words.map(word => {
+    const capitalizedWords = words.map((word) => {
       return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
     });
-  
+
     // Unimos las palabras transformadas en una cadena y la retornamos
-    return capitalizedWords.join(' ');
-  }  
-  
+    return capitalizedWords.join(" ");
+  }
+
   return (
     <>
       <h1 className="text-2xl font-bold mt-[100px] w-full px-[15%]">
@@ -170,21 +172,19 @@ const ProductDetails = () => {
         </div>
       </section>
       <section className="mb-[100px]">
-          <h3 className="flex text-2xl font-bold ml-[15%] mb-[30px]">
-            Related products
-          </h3>
-        <div className="w-full flex justify-center">
-          <div className="w-full flex justify-center">
-            <div className="flex gap-[20px] justify-center items-center ">
-              {relatedProducts.map((relatedProduct) => (
-                <Product
-                  product={relatedProduct}
-                  products={products}
-                  key={relatedProduct.id}
-                />
-              ))}
-            </div>
-          </div>
+        <h3 className="flex text-2xl font-bold ml-[15%] mb-[30px]">
+          Related products
+        </h3>
+        <div className="flex gap-[20px] justify-center items-center">
+          {relatedProducts
+            .filter((relatedProduct) => relatedProduct.id !== currentProduct.id)
+            .map((relatedProduct) => (
+              <Product
+                product={relatedProduct}
+                products={products}
+                key={relatedProduct.id}
+              />
+            ))}
         </div>
       </section>
     </>
