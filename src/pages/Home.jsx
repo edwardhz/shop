@@ -29,7 +29,7 @@ const Home = () => {
         <div className="w-[80%] m-auto">
           <div className="flex flex-wrap justify-center gap-[15px]">
             {productsToShow.map((product) => (
-              <Product product={product} key={product.id} />
+              <Product product={product} products={products} key={product.id} />
             ))}
           </div>
           <div className="flex justify-center mt-8">
